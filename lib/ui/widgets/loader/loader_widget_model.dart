@@ -15,7 +15,7 @@ class LoaderWidgetModel extends ChangeNotifier {
 
   Future<void> getUserMe(BuildContext context) async {
     final token = await _isToken();
-    
+    print(123);
     if (token == null) {
       _redirected(context, false);
     }
