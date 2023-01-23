@@ -31,6 +31,7 @@ class LoginWidgetModel extends ChangeNotifier {
     final login = loginTextController.text;
     final password = passwordTextController.text;
     final mfa = mfaTextController.text;
+    final navigator = Navigator.of(context);
 
     _loading = true;
     notifyListeners();
@@ -56,8 +57,7 @@ class LoginWidgetModel extends ChangeNotifier {
         changeMfaFrame();
       } else if (result.containsKey('token')) {
         saveToken(result['token'] as String);
-        Navigator.of(context)
-          .pushNamedAndRemoveUntil(MainNavigatorRouteNames.dashboard, (route) => false);
+        navigator.pushNamedAndRemoveUntil(MainNavigatorRouteNames.dashboard, (route) => false);
       }
     } on ApiClientException catch (_) {
       _errorMessage = 'Incorrect Email or Password';

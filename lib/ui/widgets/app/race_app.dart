@@ -9,6 +9,7 @@ class RaceApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Race',
       theme: ThemeData(
           appBarTheme: const AppBarTheme(

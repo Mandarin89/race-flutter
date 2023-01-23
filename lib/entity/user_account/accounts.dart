@@ -25,7 +25,7 @@ class Account {
   factory Account.fromJson(Map<String, dynamic> json) =>
       _$AccountFromJson(json);
 
-  Map<String, dynamic> toJson(Account account) => _$AccountToJson(this);
+  Map<String, dynamic> toJson() => _$AccountToJson(this);
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake)

@@ -14,6 +14,12 @@ abstract class AppTextStyles {
     fontWeight: FontWeight.w500,
   );
 
+    static const TextStyle mediumWhiteHeader = TextStyle(
+    color: AppColors.mainWhiteColor,
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
+  );
+
   static const TextStyle mediumGrayHeader = TextStyle(
     color: AppColors.mainGreyFontColor,
     fontSize: 18,
@@ -24,6 +30,12 @@ abstract class AppTextStyles {
     color: AppColors.mainDarkFontColor,
     fontSize: 16,
     fontWeight: FontWeight.w400,
+  );
+
+    static const TextStyle smallBoldHeader = TextStyle(
+    color: AppColors.mainDarkFontColor,
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
   );
 
   static const TextStyle smallGrayHeader = TextStyle(

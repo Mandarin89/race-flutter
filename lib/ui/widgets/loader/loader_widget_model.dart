@@ -13,9 +13,12 @@ class LoaderWidgetModel extends ChangeNotifier {
     return token;
   }
 
+  Future<void> _removeToken() async {
+    await _sessionDataProvider.removeToken();
+  }
+
   Future<void> getUserMe(BuildContext context) async {
     final token = await _isToken();
-    print(123);
     if (token == null) {
       _redirected(context, false);
     }
@@ -30,11 +33,14 @@ class LoaderWidgetModel extends ChangeNotifier {
   }
 
   Future<void> _redirected(BuildContext context, bool isAuth) async {
-    Future.delayed(const Duration(milliseconds: 3000), (() {
-      final rout = isAuth
+    Future.delayed(const Duration(milliseconds: 2000), (() {
+      if (!isAuth) {
+        _removeToken();
+      }
+      final route = isAuth
           ? MainNavigatorRouteNames.dashboard
           : MainNavigatorRouteNames.login;
-      Navigator.of(context).pushNamed(rout);
+      Navigator.of(context).pushNamedAndRemoveUntil(route, (Route<dynamic> route) => false);
     }));
   }
 }

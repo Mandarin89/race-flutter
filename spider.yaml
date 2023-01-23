@@ -19,6 +19,9 @@ use_references_list: false
 package: resources
 
 groups:
-  - path: assets/images
+  - paths:
+      - assets/images
+      - assets/images/buttons
     class_name: AppImages
-    types: [ .png, .jpg, .jpeg, .webp, .webm, .bmp ]
+    types: [ .png, .jpg, .jpeg, .webp, .webm, .bmp, .svg ]
+    
